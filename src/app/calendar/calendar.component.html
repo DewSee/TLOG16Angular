@@ -1,0 +1,42 @@
+<div class="side-bar">
+  <app-month-statistics [visibleDate]="visibleDate" [visibleMonth]="visibleMonth"></app-month-statistics>
+</div>
+
+<div id="calendarDiv">
+
+  <h4 id="actualMonth" class="actualDate" [innerText]="visibleDate.toDateString()"></h4>
+  <table id="calendar" class="table table-bordered">
+    <thead>
+    <tr id="rowZero">
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="row{{weekIndex+1}}" *ngFor="let week of [1, 2, 3, 4, 5, 6]; let weekIndex = index">
+      <td *ngFor="let day of daysOfWeek; let dayIndex = index" class="{{day.name}}">
+
+          <a
+            *ngIf="isActiveDay((dayIndex) + ((weekIndex)*7)); else inactiveDay"
+            href=""
+            class="cellNumber"
+            [ngClass]="{'today': isToday((dayIndex+1) + ((weekIndex)*7))}"
+            routerLink="/day/{{visibleDate.getFullYear()}}/{{visibleDate.getMonth() + 1}}/{{daysInCurrentMonth[(dayIndex) + ((weekIndex)*7)]}}"
+          >
+        {{daysInCurrentMonth[(dayIndex) + ((weekIndex)*7)]}}
+        </a>
+        <ng-template #inactiveDay>
+          <div class="inactiveDay"></div>
+        </ng-template>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <app-pager [visibleDate]="visibleDate" (onDateChange)="onDateChange($event)"></app-pager>
+</div>

@@ -1,0 +1,35 @@
+#header {
+  border-left: 8px solid #375F1B;
+}
+
+#navBar {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 1px;
+  overflow: hidden;
+  background-color: #9BD770
+}
+
+#navBar li {
+  height: 100%;
+  float: left;
+}
+
+#navBar li a {
+  height: 100%;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 130px;
+
+}
+
+#navBar li a:hover {
+  background-color: #375F1B;
+  text-decoration: none;
+  color: white;
+  transition-duration: 0.2s;
+}

@@ -1,0 +1,37 @@
+#pager-div {
+  float: right;
+  margin: 5px auto;
+  width: 20%;
+  align-content: center;
+}
+
+.pager {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pager button {
+  width: 45%;
+  background-color: white;
+  border: 1px solid #375F1B;
+  color: #375F1B;
+}
+
+.pager button:hover {
+  background-color: #375F1B;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+#previous-month {
+  border-radius: 10px 0 0 10px;
+
+}
+
+#next-month {
+  /*float: right;*/
+  border-radius: 0 10px 10px 0;
+}
+
+

@@ -1,0 +1,37 @@
+
+<div class="side-bar">
+
+<app-new-task-modal [baseUrl]="baseUrl" (onNewTask)="getDay()"></app-new-task-modal>
+<app-day-statistics [visibleDay]="visibleDay"></app-day-statistics>
+
+</div>
+
+<div id="task-table-div">
+  <h4 class="actualDate" id="actualDay">Actual day</h4>
+  <table class="table table-bordered" id="task-table" onload="drawTaskTable()">
+    <thead>
+    <tr>
+      <th>Task ID</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Comment</th>
+      <th>Length</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let task of visibleDay.tasks">
+      <td>{{task.taskId}}</td>
+      <td>{{task.startTime[0]}}:{{task.startTime[1]}}</td>
+      <td>{{task.endTime[0]}}:{{task.endTime[1]}}</td>
+      <td>{{task.comment}}</td>
+      <td>{{task.minPerTask}}</td>
+      <td>
+        <button type="button" id="editTaskButton">Edit</button>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+

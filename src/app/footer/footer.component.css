@@ -1,0 +1,18 @@
+#footer {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #1B3409;
+  justify-content: flex-start;
+}
+
+#footer span {
+  font-size: 20px;
+  line-height: 25px;
+  color: #9BD770;
+  padding-left: 10px;
+}

@@ -1,0 +1,10 @@
+.monthStatColumn {
+  width: 30%;
+}
+
+#monthData {
+  width: 90%;
+  margin: 40px auto;
+  background-color: white;
+  border: 2px solid #375F1B;
+}

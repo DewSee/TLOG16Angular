@@ -1,0 +1,17 @@
+<table class="table table-bordered" id="dayData">
+  <tr>
+    <td>Req. MinPerDay</td>
+    <td id="reqMinPerDay">{{visibleDay.requiredMinPerDay}}
+    </td>
+  </tr>
+  <tr>
+    <td>SumPerDay</td>
+    <td id="sumPerDay"><div *ngIf="visibleDay.sumPerDay > 0">{{visibleDay.sumPerDay}}</div></td>
+  </tr>
+  <tr>
+    <td>extraMinPerDay</td>
+    <td id="extraMinPerDay">
+      <div *ngIf="visibleDay.extraMinPerDay > 0">{{visibleDay.extraMinPerDay}}</div>
+    </td>
+  </tr>
+</table>

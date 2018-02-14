@@ -1,0 +1,14 @@
+<table class="table table-bordered" id="monthData">
+  <tr>
+    <td>Req. MinPerMonth</td>
+    <td class="monthStatColumn" id="reqMinPerMonth"><div *ngIf="visibleMonth.requiredMinPerMonth > 0">{{visibleMonth.requiredMinPerMonth}}</div></td>
+  </tr>
+  <tr>
+    <td>Sumpermonth</td>
+    <td class="monthStatColumn" id="sumperMonth"><div *ngIf="visibleMonth.sumPerMonth > 0">{{visibleMonth.sumPerMonth}}</div></td>
+  </tr>
+  <tr>
+    <td>ExtraMinPerMonth</td>
+    <td class="monthStatColumn" id="extraMinperMonth"><div *ngIf="visibleMonth.extraMinPerMonth > 0">{{visibleMonth.extraMinPerMonth}}</div></td>
+  </tr>
+</table>

@@ -1,0 +1,30 @@
+<button type="button" id="newTaskButton" (click)="openNewTaskModal()">New Task</button>
+
+<div id="newTaskModal" class="modal" #newTaskModal>
+  <div class="newTaskModalContent">
+    <div id="newTaskModalHeader">
+      <span class="close" (click)="closeTaskModal(); newTaskForm.reset()">&times;</span>
+      <h4>Add new task</h4>
+    </div>
+    <div id="newTaskModalBody">
+      <div id="classContainter">
+        <form id="newTaskForm" [formGroup]="newTaskForm" (ngSubmit)="createNewTask(newTaskForm.value)">
+          <label for="formTaskID">Task ID</label>
+          <input type="text" id="formTaskID" name=taskId, placeholder="Task ID" formControlName="taskId"
+                 [ngClass]="{invalid: newTaskForm.get('taskId').touched && newTaskForm.get('taskId').invalid}">
+
+          <label for="formStartTime">Start time</label>
+          <input type="text" id="formStartTime" name=startTime, placeholder="Start time" formControlName="startTime"
+                 [ngClass]="{invalid: newTaskForm.get('startTime').touched && newTaskForm.get('startTime').invalid}">
+          <label for="formComment">Comment</label>
+          <input type="text" id="formComment" name=comment, placeholder="Comment" formControlName="comment"
+                 [ngClass]="{invalid: newTaskForm.get('comment').touched && newTaskForm.get('comment').invalid}">
+          <input type="submit" id="createTaskButton" [disabled]="newTaskForm.invalid"
+                 (click)="closeTaskModal();" value="Create">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
