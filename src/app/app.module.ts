@@ -13,6 +13,7 @@ import { NewTaskModalComponent } from './day/new-task-modal/new-task-modal.compo
 import { CalendarComponent } from './calendar/calendar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { EditTaskModalComponent } from './day/edit-task-modal/edit-task-modal.component';
 
 const appRoutes: Routes = [
   {
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     DayStatisticsComponent,
     NewTaskModalComponent,
     CalendarComponent,
+    EditTaskModalComponent,
   ],
   imports: [
     BrowserModule,

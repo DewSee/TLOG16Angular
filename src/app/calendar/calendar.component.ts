@@ -14,7 +14,7 @@ const DAYS_OF_WEEK = [
   {name: 'Sunday'}
 ];
 
-const baseUrl = 'http://127.0.0.1:9080/timelogger';
+const baseUrl = 'http://127.0.0.1:8080/timelogger';
 
 @Component({
   selector: 'app-calendar',

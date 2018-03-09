@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ITask} from '../shared/interfaces/ITask';
 import {IWorkDay} from '../shared/interfaces/IWorkDay';
@@ -12,7 +12,8 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./day.component.css']
 })
 export class DayComponent implements OnInit {
-  baseUrl = 'http://127.0.0.1:9080/timelogger';
+  @ViewChild('editTaskModal') child;
+  baseUrl = 'http://127.0.0.1:8080/timelogger';
 
   visibleDay: IWorkDay = {
     id: 0,
@@ -23,7 +24,6 @@ export class DayComponent implements OnInit {
     actualDay: null
   };
 
-  tasksOfDay: Array<ITask> = [];
 
 
   constructor(private route: ActivatedRoute,
@@ -34,19 +34,17 @@ export class DayComponent implements OnInit {
     this.getDay();
   }
 
+
+
   getDay(): void {
     const year = this.route.snapshot.paramMap.get('visibleYear');
-    console.log(year);
     const month = this.route.snapshot.paramMap.get('visibleMonth');
-    console.log(month);
     const numberOfDay = this.route.snapshot.paramMap.get('numberOfDay');
-    console.log(numberOfDay);
 
     this.http.get(this.baseUrl + '/workmonths/' + year + '/' + month + '/' + numberOfDay, {responseType: 'text'}).subscribe(data => {
         const workDay: IWorkDay = JSON.parse(data);
         if (workDay) {
           this.visibleDay = workDay;
-          this.tasksOfDay = workDay.tasks;
         }
       }
     );

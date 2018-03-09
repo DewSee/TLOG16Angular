@@ -1,0 +1,32 @@
+
+
+<div id="editTaskModal" class="modal" #editTaskModal>
+  <div class="editTaskModalContent">
+    <div id="editTaskModalHeader">
+      <span class="close"(click)="closeEditTaskModal(); editTaskForm.reset()">&times;</span>
+      <h4>Edit task</h4>
+    </div>
+    <div id="editTaskModalBody">
+      <div id="classContainter">
+        <form id="editTaskForm" [formGroup]="editTaskForm"><!--(ngSubmit)="editTask(editTaskForm.value)"-->
+          <label for="formTaskID">Task ID</label>
+          <input type="text" id="formTaskID" name=taskId, placeholder="Task ID" formControlName="taskId"
+                 [ngClass]="{invalid: editTaskForm.get('taskId').touched && editTaskForm.get('taskId').invalid}">
+
+          <label for="formStartTime">Start time</label>
+          <input type="text" id="formStartTime" name=startTime, placeholder="Start time" formControlName="startTime"
+                 [ngClass]="{invalid: editTaskForm.get('startTime').touched && editTaskForm.get('startTime').invalid}">
+          <label for="formEndTime">End time</label>
+          <input type="text" id="formEndTime" name=endTime, placeholder="End time" formControlName="endTime"
+                 [ngClass]="{invalid: editTaskForm.get('startTime').touched && editTaskForm.get('startTime').invalid}">
+          <label for="formComment">Comment</label>
+          <input type="text" id="formComment" name=comment, placeholder="Comment" formControlName="comment"
+                 [ngClass]="{invalid: editTaskForm.get('comment').touched && editTaskForm.get('comment').invalid}">
+          <input type="submit" id="editTaskButton" [disabled]="editTaskForm.invalid" value="OK">
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+

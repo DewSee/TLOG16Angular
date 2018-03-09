@@ -51,7 +51,7 @@ export class NewTaskModalComponent implements OnInit {
 
   private initForm(): void {
     this.newTaskForm = this.formBuilder.group({
-      taskId: ['', [Validators.required, Validators.minLength(4)]],
+      taskId: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(7)]],
       startTime: ['', [Validators.required, Validators.pattern('[0-9]|0[0-9]|1[0-9]|2[0-3]:[0-5][0-9]')] ],
       comment: ['', [Validators.required, Validators.minLength(1)]],
     });

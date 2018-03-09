@@ -1,21 +1,5 @@
-#newTaskButton {
-  background-color: white;
-  border: 1px solid;
-  border-radius: 0;
-  width: 50%;
-  height: 30px;
-  margin: 0 0 10px 0;
-}
-
-#newTaskButton:hover {
-  background-color: #375F1B;
-  color: white;
-  transition-duration: 0.2s;
-
-}
-
 /*Modal*/
-#newTaskModal {
+#editTaskModal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -29,7 +13,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.newTaskModalContent {
+.editTaskModalContent {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -43,61 +27,21 @@
   animation-duration: 0.4s
 }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0
-  }
-  to {
-    top: 0;
-    opacity: 1
-  }
+#editTaskModalBody{
+  padding: 2px 16px;
 }
 
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0
-  }
-  to {
-    top: 0;
-    opacity: 1
-  }
-}
 
-.close {
-  opacity: 40;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #e0e0e0;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Modal Header */
-#newTaskModalHeader {
+/* Modal header*/
+#editTaskModalHeader{
   padding: 2px 16px;
   background-color: #5cb85c;
   color: white;
 }
 
-/* Modal Body */
-#newTaskModalBody {
-  padding: 2px 16px;
-}
 
 /*Form in modal*/
-#newTaskForm {
-  text-align: left;
-}
-
-#newTaskForm label {
+#editTaskForm label {
   padding: 12px 0 0 5px;
 }
 
