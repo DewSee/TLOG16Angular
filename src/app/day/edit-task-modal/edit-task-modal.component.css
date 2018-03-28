@@ -56,6 +56,28 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
+#timeInputDiv{
+  display: flex;
+}
+
+.timeLabel{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.timeLabel:first-child{
+  margin-right: 3px;
+}
+
+.timeLabel:last-child{
+  margin-left: 3px;
+}
+
+#timeInputDiv input[type=text], select, textarea{
+  width: 100%;
+}
+
 input[type=submit] {
   background-color: white;
   color: black;

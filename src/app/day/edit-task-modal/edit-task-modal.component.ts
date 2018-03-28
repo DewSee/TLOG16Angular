@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
@@ -9,6 +9,7 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./edit-task-modal.component.css']
 })
 export class EditTaskModalComponent implements OnInit {
+  @Input() baseUrl: string;
   public editTaskForm: FormGroup;
   taskIdToEdit: string;
 
@@ -33,13 +34,15 @@ export class EditTaskModalComponent implements OnInit {
     editTaskModal.style.display = 'none';
 }
 
+
   private initForm(): void {
     this.editTaskForm = this.formBuilder.group({
-      taskId: ['', [Validators.required, Validators.minLength(4)], Validators.maxLength(7)],
-      startTime: ['', [Validators.required, Validators.pattern('[0-9]|0[0-9]|1[0-9]|2[0-3]:[0-5][0-9]')] ],
-      endTime: ['', [Validators.required, Validators.pattern('[0-9]|0[0-9]|1[0-9]|2[0-3]:[0-5][0-9]')] ],
+      taskId: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(7)]],
+      startTime: ['', [Validators.required, Validators.pattern('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$')] ],
+      endTime: ['', [Validators.required, Validators.pattern('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$')] ],
       comment: ['', [Validators.required, Validators.minLength(1)]],
     });
   }
-
 }
+
+

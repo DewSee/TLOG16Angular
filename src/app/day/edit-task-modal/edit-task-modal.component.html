@@ -13,12 +13,25 @@
           <input type="text" id="formTaskID" name=taskId, placeholder="Task ID" formControlName="taskId"
                  [ngClass]="{invalid: editTaskForm.get('taskId').touched && editTaskForm.get('taskId').invalid}">
 
-          <label for="formStartTime">Start time</label>
-          <input type="text" id="formStartTime" name=startTime, placeholder="Start time" formControlName="startTime"
-                 [ngClass]="{invalid: editTaskForm.get('startTime').touched && editTaskForm.get('startTime').invalid}">
-          <label for="formEndTime">End time</label>
-          <input type="text" id="formEndTime" name=endTime, placeholder="End time" formControlName="endTime"
-                 [ngClass]="{invalid: editTaskForm.get('startTime').touched && editTaskForm.get('startTime').invalid}">
+          <div id="timeInputDiv">
+
+
+            <div class="timeLabel">
+              <label for="formStartTime">Start time</label>
+              <input type="text" id="formStartTime" name=startTime, placeholder="Start time" formControlName="startTime"
+              [ngClass]="{invalid: editTaskForm.get('startTime').touched && editTaskForm.get('startTime').invalid}">
+
+            </div>
+            <div class="timeLabel">
+              <label for="formEndTime">End time</label>
+              <input type="text" id="formEndTime" name=endTime, placeholder="End time" formControlName="endTime"
+                     [ngClass]="{invalid: editTaskForm.get('endTime').touched && editTaskForm.get('endTime').invalid}">
+            </div>
+
+
+
+          </div>
+
           <label for="formComment">Comment</label>
           <input type="text" id="formComment" name=comment, placeholder="Comment" formControlName="comment"
                  [ngClass]="{invalid: editTaskForm.get('comment').touched && editTaskForm.get('comment').invalid}">

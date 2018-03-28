@@ -6,7 +6,7 @@
 <app-day-statistics [visibleDay]="visibleDay"></app-day-statistics>
 
 </div>
-<app-edit-task-modal #editTaskModal></app-edit-task-modal>
+<app-edit-task-modal [baseUrl]="baseUrl" #editTaskModal></app-edit-task-modal>
 
 <div id="task-table-div">
   <h4 class="actualDate" id="actualDay">Actual day</h4>
@@ -17,13 +17,19 @@
       <th>Start time</th>
       <th>End time</th>
       <th>Comment</th>
-      <th>Length</th>
+      <th>Duration (min)</th>
       <th></th>
     </tr>
     <tr *ngFor="let task of visibleDay.tasks">
       <td>{{task.taskId}}</td>
-      <td>{{task.startTime[0]}}:{{task.startTime[1]}}</td>
-      <td>{{task.endTime[0]}}:{{task.endTime[1]}}</td>
+      <ng-container *ngIf="task.startTime[1] != '0' || task.endTime[1] != '0'">
+        <td>{{task.startTime[0]}}:{{task.startTime[1]}}</td>
+        <td>{{task.endTime[0]}}:{{task.endTime[1]}}</td>
+      </ng-container>
+      <ng-container *ngIf="task.startTime[1] == '0' || task.endTime[1] == '0'">
+        <td>{{task.startTime[0]}}:00</td>
+        <td>{{task.endTime[0]}}:00</td>
+      </ng-container>
       <td>{{task.comment}}</td>
       <td>{{task.minPerTask}}</td>
       <td>
